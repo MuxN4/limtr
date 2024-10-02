@@ -7,7 +7,7 @@ class Limiter {
       points: 10,
       duration: 1,
       keyPrefix: 'ratex',
-      keyGenerator: (req) => req.ip, // Default key generator added
+      keyGenerator: (req) => req.ip, // Default key generator
       ...options
     };
 
@@ -25,6 +25,7 @@ class Limiter {
     return async (req, res, next) => {
       try {
         const key = this.options.keyGenerator(req);
+        console.log('Generated key:', key); // Debugging line
         const rateLimiterRes = await this.rateLimiter.consume(key);
         
         res.setHeader('X-RateLimit-Limit', this.options.points);
