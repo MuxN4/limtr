@@ -1,4 +1,4 @@
-# ratex
+# limtr
 
 A flexible rate-limiting middleware for Express applications using Redis for storage.
 
@@ -13,18 +13,18 @@ A flexible rate-limiting middleware for Express applications using Redis for sto
 ## Installation
 
 ```bash
-npm install ratex
+npm install limtr
 ```
 
 Make sure you have Redis installed and running on your system.
 
 ## Usage
 
-Here's a basic example of how to use ratex in your Express application:
+Here's a basic example of how to use limtr in your Express application:
 
 ```javascript
 const express = require('express');
-const Limiter = require('ratex');
+const Limiter = require('limtr');
 
 const app = express();
 
@@ -55,13 +55,13 @@ The `Limiter` constructor accepts the following options:
 
 - `points` (Number): Maximum number of requests allowed within the duration (default: 10)
 - `duration` (Number): Time window in seconds (default: 1)
-- `keyPrefix` (String): Prefix for Redis keys (default: 'ratex')
+- `keyPrefix` (String): Prefix for Redis keys (default: 'limtr')
 - `redisOptions` (Object): Options for the Redis client (see [ioredis documentation](https://github.com/luin/ioredis/blob/master/API.md#new-redisport-host-options))
 - `keyGenerator` (Function): Custom function to generate keys (default: uses IP address)
 
 ## Headers
 
-ratex sets the following headers on responses:
+limtr sets the following headers on responses:
 
 - `X-RateLimit-Limit`: The maximum number of requests allowed in the current time window
 - `X-RateLimit-Remaining`: The number of requests remaining in the current time window

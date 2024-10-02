@@ -1,9 +1,9 @@
 const express = require('express');
-const Limiter = require('ratex'); // Import from the installed package
+const Limiter = require('limtr'); // Import from the installed package
 
 // For ES modules, you would use:
 // import express from 'express';
-// import Limiter from 'ratex';
+// import Limiter from 'limtr';
 
 const app = express();
 

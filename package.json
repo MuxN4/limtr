@@ -1,5 +1,5 @@
 {
-  "name": "ratex",
+  "name": "limtr",
   "version": "1.0.1",
   "description": "A flexible rate-limiting middleware for Express applications",
   "main": "src/index.js",
@@ -30,10 +30,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/MuxN4/ratex.git"
+    "url": "git+https://github.com/MuxN4/limtr.git"
   },
   "bugs": {
-    "url": "https://github.com/MuxN4/ratex/issues"
+    "url": "https://github.com/MuxN4/limtr/issues"
   },
-  "homepage": "https://github.com/MuxN4/ratex#readme"
+  "homepage": "https://github.com/MuxN4/limtr#readme"
 }

@@ -6,7 +6,7 @@ class Limiter {
     this.options = {
       points: 10,
       duration: 1,
-      keyPrefix: 'ratex',
+      keyPrefix: 'limtr',
       keyGenerator: (req) => req.ip, // Default key generator
       ...options
     };
