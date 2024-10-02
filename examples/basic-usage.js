@@ -1,5 +1,5 @@
 const express = require('express');
-const Limiter = require('limtr'); // Import from the installed package
+const Limiter = require('@muxn4/limtr'); // Import from the scoped package
 
 // For ES modules, you would use:
 // import express from 'express';

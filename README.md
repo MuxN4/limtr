@@ -13,7 +13,7 @@ A flexible rate-limiting middleware for Express applications using Redis for sto
 ## Installation
 
 ```bash
-npm install limtr
+npm install @muxn4/limtr
 ```
 
 Make sure you have Redis installed and running on your system.
@@ -24,7 +24,7 @@ Here's a basic example of how to use limtr in your Express application:
 
 ```javascript
 const express = require('express');
-const Limiter = require('limtr');
+const Limiter = require('@muxn4/limtr');
 
 const app = express();
 
