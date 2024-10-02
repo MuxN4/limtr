@@ -4,9 +4,10 @@ const { RateLimiterRedis } = require('rate-limiter-flexible');
 class Limiter {
   constructor(options = {}) {
     this.options = {
-      points: 10, // Number of points
-      duration: 1, // Per second(s)
+      points: 10,
+      duration: 1,
       keyPrefix: 'ratex',
+      keyGenerator: (req) => req.ip, // Default key generator added
       ...options
     };
 
@@ -23,7 +24,7 @@ class Limiter {
   middleware() {
     return async (req, res, next) => {
       try {
-        const key = this.options.keyGenerator ? this.options.keyGenerator(req) : req.ip;
+        const key = this.options.keyGenerator(req);
         const rateLimiterRes = await this.rateLimiter.consume(key);
         
         res.setHeader('X-RateLimit-Limit', this.options.points);
