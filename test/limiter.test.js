@@ -51,12 +51,16 @@ describe('Limiter', () => {
       redisOptions: {},
       keyGenerator: customKeyGenerator
     });
-    app.use(limiter.middleware());
+    
+    const newApp = express();
+    newApp.use(limiter.middleware());
+    newApp.get('/', (req, res) => res.sendStatus(200));
 
-    await request(app).get('/');
+    await request(newApp).get('/');
     expect(customKeyGenerator).toHaveBeenCalled();
+    console.log('Custom key generator called:', customKeyGenerator.mock.calls.length, 'times');
 
-    const res = await request(app).get('/');
+    const res = await request(newApp).get('/');
     expect(res.status).toBe(429);
   });
 });
