@@ -1,5 +1,5 @@
 {
-  "name": "limtr",
+  "name": "@muxn4/limtr",
   "version": "1.0.1",
   "description": "A flexible rate-limiting middleware for Express applications",
   "main": "src/index.js",
