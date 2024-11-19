@@ -1,6 +1,6 @@
 # limtr
 
-A flexible rate-limiting middleware for Express applications using Redis for storage.
+A flexible rate-limiting middleware for Express applications using Redis for storage
 
 ## Features
 
